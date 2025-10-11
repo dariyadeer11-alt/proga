@@ -1,17 +1,18 @@
 #1
 kvadro = [x**2 for x in range(1,11)]
-print(kvadro)
+print("Квадраты чисел: ", kvadro)
 
 #2
 chet = [x for x in range(1,20) if x%2==0]
-print(chet)
+print("Четные числа: ", chet)
 
 #3
 words = ['python', 'Java', 'c++', 'Rust', 'go']
 spisok = [x.upper() for x in words if len(x)>3]
-print(spisok)
+print("Слова в верхнем регистре, которые длиннее 3 символов: ", spisok)
 
 #4
+print("Итератор: \n")
 class Countdown:
     def __init__(self, n):
         self.n = n + 1
@@ -30,6 +31,7 @@ for x in Countdown(5):
     print(x)
 
 #5
+print("Фибоначчи: \n")
 def fibonacci(n):
     fib = [0, 1]
     for i in range(2, n):
@@ -63,8 +65,8 @@ S = P * (Decimal('1') + monthly_rate) ** month
 profit = S - P
 
 # Вывод с точностью до копеек
-print(S.quantize(Decimal('0.01')))
-print(profit.quantize(Decimal('0.01')))
+print("Итоговая сумма: ", S.quantize(Decimal('0.01')))
+print("Прибыль: ", profit.quantize(Decimal('0.01')))
 
 #7
 from fractions import Fraction
@@ -74,16 +76,16 @@ f1 = Fraction(3, 4)
 f2 = Fraction(5, 6)
 
 # Операции
-addition = f1 + f2
-subtraction = f1 - f2
-multiplication = f1 * f2
-division = f1 / f2
+summ = f1 + f2
+vich = f1 - f2
+ymnozenie = f1 * f2
+delen = f1 / f2
 
 # Вывод результатов
-print(addition)
-print(subtraction)
-print(multiplication)
-print(division)
+print("Сумма: ", summ)
+print("Вычитание: ", vich)
+print("Умноженипе: ", ymnozenie)
+print("Деление: ", delen)
 
 #8
 from datetime import datetime
@@ -116,8 +118,8 @@ next_birthday = date(next_birthday_year, birthday.month, birthday.day)
 days_to_next = (next_birthday - today).days
 
 # Вывод результатов
-print(days_passed)
-print(days_to_next)
+print("С момента рождения прошло: ", days_passed)
+print("Сколько дней осталось до следующего дня рождения: ",days_to_next)
 
 #10
 from datetime import datetime
