@@ -1,14 +1,17 @@
+#1
 kvadro = [x**2 for x in range(1,11)]
 print(kvadro)
 
+#2
 chet = [x for x in range(1,20) if x%2==0]
 print(chet)
 
+#3
 words = ['python', 'Java', 'c++', 'Rust', 'go']
 spisok = [x.upper() for x in words if len(x)>3]
 print(spisok)
 
-
+#4
 class Countdown:
     def __init__(self, n):
         self.n = n + 1
@@ -26,6 +29,7 @@ class Countdown:
 for x in Countdown(5):
     print(x)
 
+#5
 def fibonacci(n):
     fib = [0, 1]
     for i in range(2, n):
@@ -36,16 +40,28 @@ def fibonacci(n):
 for num in fibonacci(5):
     print(num)
 
+#6
+from decimal import Decimal, getcontext
+
+getcontext().prec = 28
+
 # Ввод данных
-p = float(input("Введите начальную сумму вклада (в рублях, с копейками): "))
-t = float(input("Введите ставку годовых (в процентах): "))
-srok = int(input("Введите срок вклада (в годах): "))
+P = Decimal(input().strip())
+r = Decimal(input().strip())
+t = Decimal(input().strip())
 
-# Расчет итоговой суммы с учетом капитализации процентов
-S = p * (1 + (t / 100) * srok)  # Формула без учета сложного процента
-# Или с учетом сложного процента (капитализация ежегодно):
-S = p * (1 + t / 100) ** srok
+# Расчет месячной ставки
+monthly_rate = r / Decimal('100') / Decimal('12')
 
+# Расчет экспоненты
+exponent = Decimal('12') * t
 
-print(f"Итоговая сумма вклада: {S:.2f} рублей")
-print(f"Общая прибыль (разница между итоговой суммой и первоначальной): {(S - p):.2f} рублей")
+# Расчет итоговой суммы
+S = P * (Decimal('1') + monthly_rate) ** exponent
+
+# Расчет прибыли
+profit = S - P
+
+# Вывод с точностью до копеек
+print(S.quantize(Decimal('0.01')))
+print(profit.quantize(Decimal('0.01')))
