@@ -48,9 +48,9 @@ from decimal import Decimal, getcontext
 getcontext().prec = 28 #макс точность
 
 # Ввод данных
-P = Decimal(input("Начальная сумма вклада (в рублях, c копейками)").strip())
-r = Decimal(input("Процентная ставка годовых").strip())
-t = Decimal(input("Срок вклада(в годах)").strip())
+P = Decimal(input("Начальная сумма вклада (в рублях, c копейками): ").strip())
+r = Decimal(input("Процентная ставка годовых: ").strip())
+t = Decimal(input("Срок вклада(в годах): ").strip())
 
 # Расчет месячной ставки
 monthly_rate = r / Decimal('100') / Decimal('12')
@@ -92,9 +92,9 @@ from datetime import datetime
 
 now = datetime.now()
 
-print("Текущая дата и время", now)
-print("Текущая дата:", now.date())
-print("Текущее время:", now.time())
+print("Текущая дата и время: ", now)
+print("Текущая дата: ", now.date())
+print("Текущее время: ", now.time())
 
 #9
 from datetime import date
@@ -119,7 +119,7 @@ days_to_next = (next_birthday - today).days
 
 # Вывод результатов
 print("С момента рождения прошло: ", days_passed)
-print("Сколько дней осталось до следующего дня рождения: ",days_to_next)
+print("Сколько дней осталось до следующего дня рождения: ", days_to_next)
 
 #10
 from datetime import datetime
