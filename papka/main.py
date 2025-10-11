@@ -65,3 +65,22 @@ profit = S - P
 # Вывод с точностью до копеек
 print(S.quantize(Decimal('0.01')))
 print(profit.quantize(Decimal('0.01')))
+
+#7
+from fractions import Fraction
+
+# Создание дробей
+f1 = Fraction(3, 4)
+f2 = Fraction(5, 6)
+
+# Операции
+addition = f1 + f2
+subtraction = f1 - f2
+multiplication = f1 * f2
+division = f1 / f2
+
+# Вывод результатов
+print(addition)
+print(subtraction)
+print(multiplication)
+print(division)
