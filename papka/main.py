@@ -118,3 +118,18 @@ days_to_next = (next_birthday - today).days
 # Вывод результатов
 print(days_passed)
 print(days_to_next)
+
+#10
+from datetime import datetime
+
+def format_datetime(dt: datetime) -> str:
+    months = [
+        '', 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+        'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
+    ]
+    day = dt.day
+    month = months[dt.month]
+    year = dt.year
+    hour = dt.hour
+    minute = dt.minute
+    return f'Сегодня {day} {month} {year} года, время: {hour:02d}:{minute:02d}'
