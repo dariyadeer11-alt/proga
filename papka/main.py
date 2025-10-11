@@ -17,7 +17,7 @@ class Countdown:
     #инициализируем, не вызывая вручную
     def __init__(self, n):
         self.n = n + 1
-    #сам итератор
+    #сам итератор(чтобы использ в циклах) возвр к той же переменной
     def __iter__(self):
         return self
     #действие
@@ -48,7 +48,7 @@ from decimal import Decimal, getcontext
 getcontext().prec = 28 #макс точность
 
 #ввод данных
-P = Decimal(input("Начальная сумма вклада (в рублях, c копейками): ").strip())
+P = Decimal(input("Начальная сумма вклада (в рублях): ").strip())
 r = Decimal(input("Процентная ставка годовых: ").strip())
 t = Decimal(input("Срок вклада(в годах): ").strip())
 
@@ -134,3 +134,5 @@ def format_datetime(dt: datetime) -> str:
     return f'Сегодня {day} {month} {year} года, время: {hour:02d}:{minute:02d}'
 time = datetime.now()
 print(format_datetime(time))
+
+print("shfj")
