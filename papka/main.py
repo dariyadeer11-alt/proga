@@ -128,8 +128,10 @@ def format_datetime(dt: datetime) -> str:
         'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
     ]
     day = dt.day
-    month = months[dt.month]
+    month = months[dt.month] #как число
     year = dt.year
     hour = dt.hour
     minute = dt.minute
     return f'Сегодня {day} {month} {year} года, время: {hour:02d}:{minute:02d}'
+time = datetime.now()
+print(format_datetime(time))
