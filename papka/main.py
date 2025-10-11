@@ -43,21 +43,21 @@ for num in fibonacci(5):
 #6
 from decimal import Decimal, getcontext
 
-getcontext().prec = 28
+getcontext().prec = 28 #макс точность
 
 # Ввод данных
-P = Decimal(input().strip())
-r = Decimal(input().strip())
-t = Decimal(input().strip())
+P = Decimal(input("Начальная сумма вклада (в рублях, c копейками)").strip())
+r = Decimal(input("Процентная ставка годовых").strip())
+t = Decimal(input("Срок вклада(в годах)").strip())
 
 # Расчет месячной ставки
 monthly_rate = r / Decimal('100') / Decimal('12')
 
 # Расчет экспоненты
-exponent = Decimal('12') * t
+month = Decimal('12') * t
 
 # Расчет итоговой суммы
-S = P * (Decimal('1') + monthly_rate) ** exponent
+S = P * (Decimal('1') + monthly_rate) ** month
 
 # Расчет прибыли
 profit = S - P
@@ -84,3 +84,12 @@ print(addition)
 print(subtraction)
 print(multiplication)
 print(division)
+
+#8
+from datetime import datetime
+
+now = datetime.now()
+
+print("Текущая дата и время", now)
+print("Текущая дата:", now.date())
+print("Текущее время:", now.time())
