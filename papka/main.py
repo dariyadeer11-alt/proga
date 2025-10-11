@@ -93,3 +93,28 @@ now = datetime.now()
 print("Текущая дата и время", now)
 print("Текущая дата:", now.date())
 print("Текущее время:", now.time())
+
+#9
+from datetime import date
+
+# День рождения
+birthday = date(2005, 11, 13)
+
+# Текущая дата
+today = date.today()
+
+# Сколько дней прошло с момента рождения
+days_passed = (today - birthday).days
+
+# Определение следующего дня рождения
+next_birthday_year = today.year
+if (today.month, today.day) > (birthday.month, birthday.day):
+    next_birthday_year += 1
+next_birthday = date(next_birthday_year, birthday.month, birthday.day)
+
+# Сколько дней до следующего дня рождения
+days_to_next = (next_birthday - today).days
+
+# Вывод результатов
+print(days_passed)
+print(days_to_next)
